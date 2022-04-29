@@ -28,9 +28,13 @@ dataSources:
     mapping:
       file: './dist/index.js'
       handlers:
-        - handler: handleFrontierEvmEvent
+        - handler: handleGovernEvmEvent
           kind: substrate/FrontierEvmEvent
           filter:
             topics:
               - StartGovern(address indexed creator,uint256 number,uint256 governType,uint256 startDate,uint256 endDate,uint256 uintValue,string strValue,uint256 totalVoter)
-#              - VoteByNumber(address indexed votor,uint256 number,uint256 governType,uint256 totalVoter,uint approveVoter,uint opposeVoter,bool success)
+        - handler: handleVoteEvmEvent
+          kind: substrate/FrontierEvmCall
+          filter:
+            topics:
+              - VoteByNumber(address indexed votor,uint256 number,uint256 governType,uint256 totalVoter,uint256 approveVoter,uint256 opposeVoter,bool success)

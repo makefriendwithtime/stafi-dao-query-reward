@@ -20,3 +20,24 @@ type StartGovern @entity {
 
   contractAddress: String!
 }
+
+type VoteByNumber @entity {
+
+  id: ID! #Transaction hash
+
+  votor: String!
+
+  number: BigInt
+
+  governType: BigInt
+
+  totalVoter: BigInt
+
+  approveVoter: BigInt
+
+  opposeVoter: BigInt
+
+  success: Boolean
+
+  contractAddress: String!
+}
