@@ -22,15 +22,15 @@ dataSources:
       options:
         abi: governance
         address: '0xaB1421B7298cC690bF7Dc289aE29B96CAba48A00'
-      assets:
-        governance:
-          file: './abi.governance.json'
-      mapping:
-        file: './dist/index.js'
-        handlers:
-          - handler: handleFrontierEvmEvent
-            kind: substrate/FrontierEvmEvent
-            filter:
-              topics:
-                - StartGovern(address indexed creator,uint256 number,uint256 governType,uint256 startDate,uint256 endDate,uint256 uintValue,string strValue,uint256 totalVoter)
-#                - VoteByNumber(address indexed votor,uint256 number,uint256 governType,uint256 totalVoter,uint approveVoter,uint opposeVoter,bool success)
+    assets:
+      governance:
+        file: './abi.governance.json'
+    mapping:
+      file: './dist/index.js'
+      handlers:
+        - handler: handleFrontierEvmEvent
+          kind: substrate/FrontierEvmEvent
+          filter:
+            topics:
+              - StartGovern(address indexed creator,uint256 number,uint256 governType,uint256 startDate,uint256 endDate,uint256 uintValue,string strValue,uint256 totalVoter)
+#              - VoteByNumber(address indexed votor,uint256 number,uint256 governType,uint256 totalVoter,uint approveVoter,uint opposeVoter,bool success)
