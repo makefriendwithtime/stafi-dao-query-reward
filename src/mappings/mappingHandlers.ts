@@ -1,18 +1,25 @@
-import { Transaction} from "../types";
+import { StartGovern } from "../types";
 import { FrontierEvmEvent } from '@subql/contract-processors/dist/frontierEvm';
-
 import { BigNumber } from "ethers";
 
 // Setup types from ABI
-type TransferEventArgs = [string, string, BigNumber] & { from: string; to: string; value: BigNumber; };
+type GovernEventArgs = [string, BigNumber, BigNumber, BigNumber, BigNumber, BigNumber, string, BigNumber] & {creator: string; number: BigNumber; governType: BigNumber; startDate: BigNumber; endDate: BigNumber; uintValue: BigNumber; strValue: string; totalVoter:BigNumber;};
+// type VoteEventArgs = [string, BigNumber, BigNumber, BigNumber, BigNumber, BigNumber, boolean] & {votor: string; number: BigNumber; governType: BigNumber; totalVoter: BigNumber; approveVoter: BigNumber; opposeVoter:BigNumber; success:boolean;};
 
-export async function handleFrontierEvmEvent(event: FrontierEvmEvent<TransferEventArgs>): Promise<void> {
-    const transaction = new Transaction(event.transactionHash);
+export async function handleFrontierEvmEvent(event: FrontierEvmEvent<GovernEventArgs>): Promise<void> {
+    const startGovern = new StartGovern(event.transactionHash);
 
-    transaction.value = event.args.value.toBigInt();
-    transaction.from = event.args.from;
-    transaction.to = event.args.to;
-    transaction.contractAddress = event.address;
+    startGovern.creator = event.args.creator;
+    startGovern.number = event.args.number.toBigInt();
+    startGovern.governType = event.args.governType.toBigInt();
+    startGovern.startDate = event.args.startDate.toBigInt();
+    startGovern.endDate = event.args.endDate.toBigInt();
+    startGovern.uintValue = event.args.uintValue.toBigInt();
+    startGovern.strValue = event.args.strValue;
+    startGovern.totalVoter = event.args.totalVoter.toBigInt();
+    startGovern.contractAddress = event.address;
 
-    await transaction.save();
+    await startGovern.save();
 }
+
+

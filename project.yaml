@@ -6,25 +6,25 @@ repository: 'https://github.com/makefriendwithtime/stafi-dao-query'
 schema:
   file: ./schema.graphql
 network:
-#  genesisHash: '0x91bc6e169807aaa54802737e1c504b2577d4fafedd5a02c10293b1cd60e39527'
-#  endpoint: wss://moonbeam-alpha.api.onfinality.io/public-ws
-#  dictionary: 'https://api.subquery.network/sq/subquery/moonbase-alpha-dictionary'
-  genesisHash: '0x401a1f9dca3da46f5c4091016c8a2f26dcea05865116b286f60f668207d1474b' # Genesis hash of Moonriver
-  endpoint: wss://moonriver.api.onfinality.io/public-ws
-  dictionary: 'https://api.subquery.network/sq/subquery/moonriver-dictionary'
+  genesisHash: '0x91bc6e169807aaa54802737e1c504b2577d4fafedd5a02c10293b1cd60e39527'
+  endpoint: wss://moonbeam-alpha.api.onfinality.io/public-ws
+  dictionary: 'https://api.subquery.network/sq/subquery/moonbase-alpha-dictionary'
+#  genesisHash: '0x401a1f9dca3da46f5c4091016c8a2f26dcea05865116b286f60f668207d1474b' # Genesis hash of Moonriver
+#  endpoint: wss://moonriver.api.onfinality.io/public-ws
+#  dictionary: 'https://api.subquery.network/sq/subquery/moonriver-dictionary'
   chaintypes:
     file: ./dist/chaintypes.js
 dataSources:
   - kind: substrate/FrontierEvm
-    startBlock: 752073
+    startBlock: 1
     processor:
       file: './node_modules/@subql/contract-processors/dist/frontierEvm.js'
       options:
-        abi: erc20
-        address: '0x6bd193ee6d2104f14f94e2ca6efefae561a4334b'
+        abi: governance
+        address: '0xaB1421B7298cC690bF7Dc289aE29B96CAba48A00'
       assets:
-        erc20:
-          file: './erc20.abi.json'
+        governance:
+          file: './abi.governance.json'
       mapping:
         file: './dist/index.js'
         handlers:
@@ -32,6 +32,5 @@ dataSources:
             kind: substrate/FrontierEvmEvent
             filter:
               topics:
-                - Transfer(address indexed from,address indexed to,uint256 value)
-#                - StartGovern(address indexed creator,uint number,uint governType,uint256 startDate,uint256 endDate,uint uintValue,string strValue,uint256 totalVoter)
+                - StartGovern(address indexed creator,uint number,uint governType,uint256 startDate,uint256 endDate,uint uintValue,string strValue,uint256 totalVoter)
 #                - VoteByNumber(address indexed votor,uint number,uint governType,uint256 totalVoter,uint approveVoter,uint opposeVoter,bool success)
