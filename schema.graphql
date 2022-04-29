@@ -1,4 +1,4 @@
-type governEntity @entity {
+type StartGovern @entity {
 
   id: ID! #Transaction hash
 
@@ -17,27 +17,6 @@ type governEntity @entity {
   strValue: String
 
   totalVoter: BigInt
-
-  contractAddress: String!
-}
-
-type voteEntity @entity {
-
-  id: ID! #Transaction hash
-
-  votor: String!
-
-  number: BigInt
-
-  governType: BigInt
-
-  totalVoter: BigInt
-
-  approveVoter: BigInt
-
-  opposeVoter: BigInt
-
-  success: Boolean
 
   contractAddress: String!
 }
