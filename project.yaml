@@ -32,5 +32,5 @@ dataSources:
             kind: substrate/FrontierEvmEvent
             filter:
               topics:
-                - StartGovern(address indexed creator,uint number,uint governType,uint256 startDate,uint256 endDate,uint uintValue,string strValue,uint256 totalVoter)
-#                - VoteByNumber(address indexed votor,uint number,uint governType,uint256 totalVoter,uint approveVoter,uint opposeVoter,bool success)
+                - StartGovern(address indexed creator,uint256 number,uint256 governType,uint256 startDate,uint256 endDate,uint256 uintValue,string strValue,uint256 totalVoter)
+#                - VoteByNumber(address indexed votor,uint256 number,uint256 governType,uint256 totalVoter,uint approveVoter,uint opposeVoter,bool success)
