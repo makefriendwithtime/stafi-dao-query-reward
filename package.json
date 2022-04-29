@@ -28,7 +28,7 @@
     "moonbeam-types-bundle": "^2.0.3"
   },
   "devDependencies": {
-    "@polkadot/api": "^7",
+    "@polkadot/api": "^8",
     "@subql/cli": "^0.26.1",
     "@subql/contract-processors": "0.5.3",
     "@subql/types": "^0.14.0",
