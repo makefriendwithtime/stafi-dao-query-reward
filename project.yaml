@@ -20,11 +20,11 @@ dataSources:
     processor:
       file: './node_modules/@subql/contract-processors/dist/frontierEvm.js'
       options:
-        abi: governance
-        address: '0xaB1421B7298cC690bF7Dc289aE29B96CAba48A00'
+        abi: erc20
+        address: '0x6bd193ee6d2104f14f94e2ca6efefae561a4334b'
       assets:
-        governance:
-          file: './abi.governance.json'
+        erc20:
+          file: './erc20.abi.json'
       mapping:
         file: './dist/index.js'
         handlers:
@@ -32,5 +32,6 @@ dataSources:
             kind: substrate/FrontierEvmEvent
             filter:
               topics:
-                - StartGovern(address indexed creator,uint number,uint governType,uint256 startDate,uint256 endDate,uint uintValue,string strValue,uint256 totalVoter)
+                - Transfer(address indexed from,address indexed to,uint256 value)
+#                - StartGovern(address indexed creator,uint number,uint governType,uint256 startDate,uint256 endDate,uint uintValue,string strValue,uint256 totalVoter)
 #                - VoteByNumber(address indexed votor,uint number,uint governType,uint256 totalVoter,uint approveVoter,uint opposeVoter,bool success)

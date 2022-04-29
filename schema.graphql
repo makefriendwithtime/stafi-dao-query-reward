@@ -1,22 +1,12 @@
-type StartGovern @entity {
+type Transaction @entity {
 
-  id: ID! #Transaction hash
+  id: ID! # Transaction hash
 
-  creator: String!
+  value: BigInt!
 
-  number: BigInt
+  to: String!
 
-  governType: BigInt
-
-  startDate: BigInt
-
-  endDate: BigInt
-
-  uintValue: BigInt
-
-  strValue: String
-
-  totalVoter: BigInt
+  from: String!
 
   contractAddress: String!
 }
