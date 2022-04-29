@@ -1,0 +1,37 @@
+{
+  "name": "stafi-query-evm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -b",
+    "prepack": "rm -rf dist && npm build",
+    "test": "jest",
+    "codegen": "./node_modules/.bin/subql codegen"
+  },
+  "homepage": "https://github.com/subquery/subql-starter",
+  "repository": "github:subquery/subql-starter",
+  "files": [
+    "dist",
+    "schema.graphql",
+    "project.yaml"
+  ],
+  "author": "crg",
+  "license": "Apache-2.0",
+  "resolutions": {
+    "@polkadot/api": "^7.14.3",
+    "@polkadot/types": "^7.12.1",
+    "@polkadot/util": "8.7.1"
+  },
+  "dependencies": {
+    "@subql/node": "^0.34.0",
+    "moonbeam-types-bundle": "^2.0.4"
+  },
+  "devDependencies": {
+    "@polkadot/api": "^7",
+    "@subql/cli": "^0.26.1",
+    "@subql/contract-processors": "0.5.3",
+    "@subql/types": "latest",
+    "typescript": "^4.5.2"
+  }
+}

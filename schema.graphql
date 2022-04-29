@@ -1,0 +1,43 @@
+type governEntity @entity {
+
+  id: ID! #id is a required field
+
+  creator: String!
+
+  number: Int
+
+  governType: Int
+
+  startDate: Date
+
+  endDate: Date
+
+  uintValue: BigInt
+
+  strValue: String
+
+  totalVoter: BigInt
+
+  contractAddress: String!
+}
+
+type voteEntity @entity {
+
+  id: ID! #id is a required field
+
+  votor: String!
+
+  number: Int
+
+  governType: Int
+
+  totalVoter: BigInt
+
+  approveVoter: BigInt
+
+  opposeVoter: BigInt
+
+  success: Boolean
+
+  contractAddress: String!
+}
