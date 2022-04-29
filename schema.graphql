@@ -8,9 +8,9 @@ type governEntity @entity {
 
   governType: BigInt
 
-  startDate: Date
+  startDate: BigInt
 
-  endDate: Date
+  endDate: BigInt
 
   uintValue: BigInt
 
