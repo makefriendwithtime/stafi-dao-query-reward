@@ -4,9 +4,9 @@ type governEntity @entity {
 
   creator: String!
 
-  number: Int
+  number: BigInt
 
-  governType: Int
+  governType: BigInt
 
   startDate: Date
 
@@ -27,9 +27,9 @@ type voteEntity @entity {
 
   votor: String!
 
-  number: Int
+  number: BigInt
 
-  governType: Int
+  governType: BigInt
 
   totalVoter: BigInt
 
