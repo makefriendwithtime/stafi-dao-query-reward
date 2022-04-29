@@ -1,8 +1,8 @@
 specVersion: 0.2.0
-name: stafi-query-evm
+name: stafi-dao-query
 version: 1.0.0
-description: ''
-repository: ''
+description: 'stafi-dao-query'
+repository: 'https://github.com/makefriendwithtime/stafi-dao-query'
 schema:
   file: ./schema.graphql
 network:
@@ -25,7 +25,7 @@ dataSources:
       mapping:
         file: './dist/index.js'
         handlers:
-          - handler: handleGovernEvent
+          - handler: handleFrontierEvmEvent
             kind: substrate/FrontierEvmEvent
             filter:
               topics:

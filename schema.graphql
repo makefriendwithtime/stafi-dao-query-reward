@@ -1,6 +1,6 @@
 type governEntity @entity {
 
-  id: ID! #id is a required field
+  id: ID! #Transaction hash
 
   creator: String!
 
@@ -23,7 +23,7 @@ type governEntity @entity {
 
 type voteEntity @entity {
 
-  id: ID! #id is a required field
+  id: ID! #Transaction hash
 
   votor: String!
 

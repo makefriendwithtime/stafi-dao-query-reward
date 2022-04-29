@@ -8,7 +8,7 @@ type GovernEventArgs = [string, BigNumber, BigNumber, Date, Date, BigNumber, str
 type VoteEventArgs = [string, BigNumber, BigNumber, BigNumber, BigNumber, BigNumber, boolean]
     & {votor: string; number: BigNumber; governType: BigNumber; totalVoter: BigNumber; approveVoter: BigNumber; opposeVoter:BigNumber; success:boolean;};
 
-export async function handleGovernEvent(event: FrontierEvmEvent<GovernEventArgs>): Promise<void> {
+export async function handleFrontierEvmEvent(event: FrontierEvmEvent<GovernEventArgs>): Promise<void> {
     const governEntity = new GovernEntity(event.transactionHash);
 
     governEntity.creator = event.args.creator;
