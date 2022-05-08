@@ -9,19 +9,19 @@ network:
   genesisHash: '0x91bc6e169807aaa54802737e1c504b2577d4fafedd5a02c10293b1cd60e39527'
   endpoint: wss://moonbeam-alpha.api.onfinality.io/public-ws
   dictionary: 'https://api.subquery.network/sq/subquery/moonbase-alpha-dictionary'
-#  genesisHash: '0x401a1f9dca3da46f5c4091016c8a2f26dcea05865116b286f60f668207d1474b' # Genesis hash of Moonriver
-#  endpoint: wss://moonriver.api.onfinality.io/public-ws
-#  dictionary: 'https://api.subquery.network/sq/subquery/moonriver-dictionary'
+  #  genesisHash: '0x401a1f9dca3da46f5c4091016c8a2f26dcea05865116b286f60f668207d1474b' # Genesis hash of Moonriver
+  #  endpoint: wss://moonriver.api.onfinality.io/public-ws
+  #  dictionary: 'https://api.subquery.network/sq/subquery/moonriver-dictionary'
   chaintypes:
     file: ./dist/chaintypes.js
 dataSources:
   - kind: substrate/FrontierEvm
-    startBlock: 1000000
+    startBlock: 1
     processor:
       file: './node_modules/@subql/contract-processors/dist/frontierEvm.js'
       options:
         abi: governance
-        address: '0x7bB81A65f4D58e8C1e1284effeD063976E66E6ed'
+        address: '0x20c5B54a61Ad43927028C7D0EF1F567d14b3805d'
     assets:
       governance:
         file: './abi.governance.json'
