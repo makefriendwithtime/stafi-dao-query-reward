@@ -1,8 +1,8 @@
 specVersion: 0.2.0
-name: stafi-dao-query
+name: stafi-dao-query-reward
 version: 1.0.0
-description: 'stafi-dao-query'
-repository: 'https://github.com/makefriendwithtime/stafi-dao-query'
+description: 'stafi-dao-query-reward'
+repository: 'https://github.com/makefriendwithtime/stafi-dao-query-reward'
 schema:
   file: ./schema.graphql
 network:
@@ -16,25 +16,20 @@ network:
     file: ./dist/chaintypes.js
 dataSources:
   - kind: substrate/FrontierEvm
-    startBlock: 1000000
+    startBlock: 2129700
     processor:
       file: './node_modules/@subql/contract-processors/dist/frontierEvm.js'
       options:
-        abi: governance
-        address: '0x7bB81A65f4D58e8C1e1284effeD063976E66E6ed'
+        abi: reward
+        address: '0xA38EAc9D6e025B6302ff77A658De2EA8f1f7F4D5'
     assets:
-      governance:
-        file: './abi.governance.json'
+      reward:
+        file: './abi.reward.json'
     mapping:
       file: './dist/index.js'
       handlers:
-        - handler: handleGovernEvmEvent
+        - handler: handleRewardEvmEvent
           kind: substrate/FrontierEvmEvent
           filter:
             topics:
-              - StartGovern(address indexed creator,uint256 number,uint256 governType,uint256 startDate,uint256 endDate,uint256 uintValue,string strValue,uint256 totalVoter)
-        - handler: handleVoteEvmEvent
-          kind: substrate/FrontierEvmEvent
-          filter:
-            topics:
-              - VoteByNumber(address indexed votor,uint256 number,uint256 governType,uint256 totalVoter,uint256 approveVoter,uint256 opposeVoter,bool success)
+              - SendValue(address indexed recipient,uint256 amount)

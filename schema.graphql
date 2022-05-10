@@ -1,43 +1,10 @@
-type StartGovern @entity {
+type SendValue @entity {
 
   id: ID! #Transaction hash
 
-  creator: String!
+  recipient: String!
 
-  number: BigInt
-
-  governType: BigInt
-
-  startDate: BigInt
-
-  endDate: BigInt
-
-  uintValue: BigInt
-
-  strValue: String
-
-  totalVoter: BigInt
-
-  contractAddress: String!
-}
-
-type VoteByNumber @entity {
-
-  id: ID! #Transaction hash
-
-  votor: String!
-
-  number: BigInt
-
-  governType: BigInt
-
-  totalVoter: BigInt
-
-  approveVoter: BigInt
-
-  opposeVoter: BigInt
-
-  success: Boolean
+  amount: BigInt
 
   contractAddress: String!
 }
