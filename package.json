@@ -1,5 +1,5 @@
 {
-  "name": "stafi-dao-query",
+  "name": "stafi-dao-query-reward",
   "version": "1.0.0",
   "description": "Read more about this at https://doc.subquery.network/create/frontier/.",
   "main": "dist/index.js",
@@ -9,8 +9,8 @@
     "test": "jest",
     "codegen": "./node_modules/.bin/subql codegen"
   },
-  "homepage": "https://github.com/makefriendwithtime/stafi-dao-query",
-  "repository": "github:makefriendwithtime/stafi-dao-query",
+  "homepage": "https://github.com/makefriendwithtime/stafi-dao-query-reward",
+  "repository": "github:makefriendwithtime/stafi-dao-query-reward",
   "files": [
     "dist",
     "schema.graphql",
