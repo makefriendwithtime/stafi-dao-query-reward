@@ -21,7 +21,7 @@ dataSources:
       file: './node_modules/@subql/contract-processors/dist/frontierEvm.js'
       options:
         abi: reward
-        address: '0xA38EAc9D6e025B6302ff77A658De2EA8f1f7F4D5'
+        address: '0x12538A024483418b64DbE0FDDFd6812e8EaA5C7e'
     assets:
       reward:
         file: './abi.reward.json'
