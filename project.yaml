@@ -16,12 +16,12 @@ network:
     file: ./dist/chaintypes.js
 dataSources:
   - kind: substrate/FrontierEvm
-    startBlock: 2533359
+    startBlock: 2573893
     processor:
       file: './node_modules/@subql/contract-processors/dist/frontierEvm.js'
       options:
         abi: reward
-        address: '0x6384e067C970F35Ed38e6a12BB8fFdD4035598aa'
+        address: '0xBBd73Dd0610b2F105A52c3c8C887F6B550f36914'
     assets:
       reward:
         file: './abi.reward.json'
@@ -32,4 +32,4 @@ dataSources:
           kind: substrate/FrontierEvmEvent
           filter:
             topics:
-              - SendValue(address indexed recipient,uint256 amount)
+              - AssignReward(address[] rewardAddrs,uint256[] rewardAmounts)
